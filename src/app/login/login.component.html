@@ -1,0 +1,29 @@
+<section>
+  <mat-card-title>Accede a la aplicación</mat-card-title>
+  <div *ngIf="errorForm" class="error">Completa todos los campos con el formato correcto</div>
+  <div *ngIf="errorServer" class="error">Datos incorrectos, vuelve a intentarlo</div>
+
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="field-container">
+    <mat-form-field>
+      <input matInput type="email" placeholder="Email" name="email" [(ngModel)]="usuario.email" #emailF="ngModel" required email>
+      <div class="error" *ngIf="!emailF.valid && emailF.dirty">Campo incorrecto</div>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="usuario.password" #passF="ngModel" required >
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <div class="error" *ngIf="!passF.valid && passF.dirty">Campo incorrecto</div>
+    </mat-form-field>
+
+
+
+    <div>
+      <button mat-raised-button color="primary" inverse [disabled]="!loginForm.valid">Acceder</button>
+    </div>
+    <div class="container signin">
+      <p>Don´t have an account? <a [routerLink]="['/registro']">Register</a></p>
+    </div>
+  </form>
+</section>

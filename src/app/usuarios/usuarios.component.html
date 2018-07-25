@@ -1,0 +1,20 @@
+<div class="usuarios">
+  <mat-card-title>Usuarios</mat-card-title>
+
+  <mat-form-field >
+    <input matInput placeholder="Filtra" value="" [(ngModel)]="filtro">
+  </mat-form-field>
+
+  <mat-nav-list>
+    <mat-list-item *ngFor="let unUsu of usuarios| filtrador:filtro:'titulo'">
+      <a matLine [routerLink]="['/usuarios',unUsu.uid]">
+        <span>[{{unUsu.uid}}]</span> {{unUsu.name}} {{unUsu.email}}</a>
+      <button mat-icon-button [routerLink]="['/usuarios',unUsu.uid]">
+        <mat-icon>info</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-nav-list>
+  <p>
+    <button color="secondary"  mat-raised-button [routerLink]="['/usuarios/new']">Nuevo</button>    
+  </p>
+</div>

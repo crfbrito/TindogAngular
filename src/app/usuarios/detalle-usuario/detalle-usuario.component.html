@@ -1,0 +1,40 @@
+<!--<article *ngIf="elusuario">
+  <h3>Detalle de usuario</h3>
+  <p>Id: {{elusuario.uid}}</p>
+  <p>Título: {{elusuario.name}}</p>
+ 
+  <p>  
+    <a  [routerLink]="['/usuarios']">Atrás</a>
+  </p>
+</article>-->
+
+<div class="tbgwrap" *ngIf="elusuario">
+  
+  <div class="tphoto">
+    <img src="{{elusuario.pictures}}" title="tphoto" alt="Tindog Photo" />
+    
+    <div class="tname">
+      {{elusuario.name}}, <span class="age">{{elusuario.age}},</span>
+      <i class="fa fa-users" aria-hidden="true"> <br> Descripcion:{{elusuario.description}}</i>
+    </div>
+    <div class="tinfo">
+      <i class="fa fa-book" aria-hidden="true">Intereses:
+        {{elusuario.interests}}</i> <i class="fa fa-users" aria-hidden="true">
+          </i>
+    </div>
+  </div>
+
+
+  <div class="tcontrols">
+    <div class="tno">
+      <i class="fa fa-times" aria-hidden="true">No</i>
+    </div>
+    <div class="ti">
+      <i class="fa fa-info" aria-hidden="true">x</i>
+    </div>
+    <div class="tyes">
+      <i class="fa fa-heart" aria-hidden="true">Si</i>
+    </div>
+  </div>
+  
+</div>

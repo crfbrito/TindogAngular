@@ -1,0 +1,13 @@
+<section>
+  <h3>Nuevo usuario</h3>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" [(ngModel)]="newUser.name" name="name" id="name" minlength="3" required>
+      <label for="name">Email:</label>
+      <input type="text" [(ngModel)]="newUser.email" name="email" id="email" minlength="3" required>
+    </div>
+    <div><button [disabled]="!myForm.valid">Guardar</button></div>
+  </form>
+  {{newUser|json}}
+</section>

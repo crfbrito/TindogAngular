@@ -1,0 +1,10 @@
+<article *ngIf="latarea">
+  <h3>Detalle de tarea</h3>
+  <p>Id: {{latarea.tid}}</p>
+  <p>Descripción: {{latarea.descripcion}}</p>
+  <p>Duración: {{latarea.duracion}} h</p>
+  <p>Usuario: {{latarea.usuario}}</p>
+  <p>  
+    <a  [routerLink]="['/tareas']">Atrás</a>
+  </p>
+</article>

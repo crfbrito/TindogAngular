@@ -1,0 +1,9 @@
+.error{color:red; margin: 10px;}
+.field-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .field-container > * {
+    width: 100%;
+  }
