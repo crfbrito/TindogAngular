@@ -13,7 +13,7 @@ import { of } from 'rxjs';
 @Injectable()
 export class UsuariosService {
   private _usuariosStore: Usuario[];
-  private _apiUsuarios: string = 'http://localhost:8080/TindogREST/api/users/';
+  private _apiUsuarios: string = 'http://10.100.17.95/TindogREST/api/users/';
   private _usuariosObs: Observable<Usuario[]>;
 
   constructor(private _httpClient: HttpClient, private _authService:AuthService, private _router:Router) {
