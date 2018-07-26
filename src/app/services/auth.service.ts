@@ -12,7 +12,7 @@ import { Usuario } from '../modelos/usuario';
 })
 export class AuthService {
 
-  private _apiAuth: string = 'http://10.100.17.95/TindogREST/api/auth/';
+  private _apiAuth: string = 'http:/10.100.17.95:11003/TindogREST/api/auth/';
   private _token:string;
   private _logout:string;
   constructor(private _httpClient:HttpClient) { }
